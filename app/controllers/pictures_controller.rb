@@ -1,6 +1,8 @@
 class PicturesController < ApplicationController
   def index
-    @pictures = Picture.all
+    @most_recent_pictures = Picture.most_recent_five
+    @older_than_month = Picture.created_before(Time.now - 1.month)
+    @years = Picture.years
   end
   def show
     @picture = Picture.find(params[:id])
@@ -19,6 +21,7 @@ class PicturesController < ApplicationController
     if @picture.save
       # if the picture gets saved, generate a get request to "/pictures" (the index)
       redirect_to "/pictures"
+      # redirect_to
     else
       # otherwise render new.html.erb
       render :new
