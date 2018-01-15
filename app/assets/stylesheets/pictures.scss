@@ -5,3 +5,10 @@
 img {
   max-width: 30%;
 }
+
+.error_display {
+  display: inline-block;
+  border: 1px solid red;
+  font-family: monospace;
+  padding: 0.25em;
+}

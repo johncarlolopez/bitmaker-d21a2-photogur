@@ -17,3 +17,15 @@
     <%= f.submit "Save" %>
   </p>
 <% end %>
+
+<% if @picture.errors.any? %>
+  <div class="error_display">
+    <h2>Picture could not be saved due to <%= pluralize(@picture.errors.count, "error") %>:</h2>
+
+    <ul>
+    <% @picture.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
