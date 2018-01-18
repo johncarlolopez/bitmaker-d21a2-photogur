@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
     resources :pictures
 
-    resources :users, only: [:new, :create]
+    resource :users, only: [:new, :create]
+    resource :sessions, only: %i(new create destroy)
 end

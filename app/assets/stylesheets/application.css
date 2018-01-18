@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #888888;
+}
+.photogur {
+  font-family: fantasy;
+  font-size: 5em;
+  display: inline-block;
+  background-color: white;
+  padding: 0.2em 0.2em 0;
+  box-sizing: border-box;
+  margin: 0;
+}

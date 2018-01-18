@@ -6,6 +6,12 @@ img {
   max-width: 30%;
 }
 
+a {
+  text-decoration: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
 .error_display {
   display: inline-block;
   border: 1px solid red;
