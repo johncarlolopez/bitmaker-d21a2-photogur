@@ -1,26 +1,39 @@
 <h1>Most recent pictures</h1>
 
-<ul>
+<div class="pictures">
   <% @most_recent_pictures.each do |picture| %>
-    <li><%= picture.title %></li>
-    <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+  <div class="entry">
+    <p class="titles"><%= picture.title %></p>
+    <div class="picture">
+      <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
+
 
 <h1>Pictures older than 1 month</h1>
-<ul>
+<div class="pictures">
   <% @older_than_month.each do |picture| %>
-    <li><%= picture.title %></li>
-    <%= link_to(image_tag(picture.url), picture_path(picture)) %>
+  <div class="entry">
+    <%= picture.title %>
+    <div class="picture">
+      <%= link_to(image_tag(picture.url), picture_path(picture)) %>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
 
 <% @years.keys.each do |year|%>
 <h1> Pictures for <%= year %></h1>
-<ul>
-  <% @years[year].each do |picture| %>
-    <li><%= picture.title %></li>
-    <%= link_to(image_tag(picture.url), picture_path(picture)) %>
-  <% end %>
-</ul>
+  <div class="pictures">
+    <% @years[year].each do |picture| %>
+    <div class="entry">
+      <%= picture.title %>
+      <div class="picture">
+        <%= link_to(image_tag(picture.url), picture_path(picture)) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 <% end %>

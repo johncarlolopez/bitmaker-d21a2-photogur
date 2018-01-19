@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 img {
-  max-width: 30%;
+  max-width: 100%;
 }
 
 a {
@@ -17,4 +17,19 @@ a {
   border: 1px solid red;
   font-family: monospace;
   padding: 0.25em;
+}
+
+div.entry {
+  display: inline-block;
+  overflow: hidden;
+  width: 30%;
+  // float: left;
+}
+.picture {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.titles {
+  height: 2em;
 }

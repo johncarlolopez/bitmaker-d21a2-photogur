@@ -1,4 +1,6 @@
 class PicturesController < ApplicationController
+  before_action :ensure_logged_in, except: [:show, :index]
+
   def index
     @most_recent_pictures = Picture.most_recent_five
     @older_than_month = Picture.created_before(Time.now - 1.month)
