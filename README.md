@@ -1,5 +1,7 @@
 ![Bitmaker](https://github.com/johncarlolopez/bitmaker-reference/blob/master/bitmakerlogo.svg)
 
+![Preview](https://github.com/johncarlolopez/bitmaker-d21a2-photogur/blob/master/example.png)
+
 See assignment in Alexa: https://alexa.bitmaker.co/wdi/67/assignments/2035/latest
 
 # 03 - Photogur ActiveRecord Queries (Part 2)
