@@ -8,20 +8,20 @@
 Picture.create(
   title:  'The old church on the coast of White sea',
   artist: 'Sergey Ershov',
-  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/house.jpg'
+  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/house.jpg',
   user_id: 1
 )
 
 Picture.create(
   title:  'Sea Power',
   artist: 'Stephen Scullion',
-  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/wave.jpg'
+  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/wave.jpg',
   user_id: 1
 )
 
 Picture.create(
   title:  'Into the Poppies',
   artist: 'John Wilhelm',
-  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/girl.jpg'
+  url:    'http://bitmakerlabs.s3.amazonaws.com/photogur/girl.jpg',
   user_id: 1
 )

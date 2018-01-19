@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :new_picure, only: [:new, :create]
   before_action :ensure_logged_in, except: [:index, :show]
   before_action :load_picture, only: [:show, :edit, :update, :destroy]
   before_action :ensure_user_owns_picture, only: [:edit, :update, :destroy]
@@ -12,11 +13,8 @@ class PicturesController < ApplicationController
     @user = @picture.user
   end
   def new
-    @picture = Picture.new
   end
   def create
-    @picture = Picture.new
-
     @picture.title = params[:picture][:title]
     @picture.artist = params[:picture][:artist]
     @picture.url = params[:picture][:url]
@@ -28,11 +26,8 @@ class PicturesController < ApplicationController
     #   }
     # end
     if @picture.save
-      # if the picture gets saved, generate a get request to "/pictures" (the index)
       redirect_to pictures_path
-      # redirect_to
     else
-      # otherwise render new.html.erb
       render :new
     end
   end
@@ -46,7 +41,7 @@ class PicturesController < ApplicationController
 
 
     if @picture.save
-      redirect_to "/pictures/#{@picture.id}"
+      redirect_to picture_path(@picture.id)
     else
       render :edit
     end
@@ -61,8 +56,6 @@ class PicturesController < ApplicationController
 
   def ensure_user_owns_picture
     unless current_user == @picture.user
-      # ap @picture.user
-      # ap current_user
       flash[:alert] = "You do not have rights to that picture"
       redirect_to picture_path(params[:id])
     end
@@ -70,5 +63,9 @@ class PicturesController < ApplicationController
 
   def load_picture
     @picture = Picture.find(params[:id])
+  end
+
+  def new_picure
+    @picture = Picture.new
   end
 end
