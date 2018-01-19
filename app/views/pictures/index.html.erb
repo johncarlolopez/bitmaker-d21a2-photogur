@@ -3,9 +3,9 @@
 <div class="pictures">
   <% @most_recent_pictures.each do |picture| %>
   <div class="entry">
-    <p class="titles"><%= picture.title %></p>
+    <%= picture.title %>
     <div class="picture">
-      <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+      <%= link_to(image_tag(picture.url), picture_path(picture.id)) %>
     </div>
   </div>
   <% end %>

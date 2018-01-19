@@ -16,13 +16,18 @@
 
 body {
   background-color: #888888;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
 }
 .photogur {
   font-family: fantasy;
   font-size: 5em;
-  display: inline-block;
-  background-color: white;
+  display: block;
+  background: linear-gradient(to bottom, #AAAAAA, #888888);
   padding: 0.2em 0.2em 0;
   box-sizing: border-box;
   margin: 0;
+}
+.margin {
+  padding: 0.5em;
 }

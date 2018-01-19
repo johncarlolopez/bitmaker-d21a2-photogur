@@ -8,32 +8,35 @@
 </head>
 <body>
   <h1 class="photogur">Photogur</h1>
-<p>
-  <%= link_to 'Home', root_path %> |
-  <%= link_to 'Sign Up', new_users_path %> |
-  <% if current_user %>
-    <%= link_to("New Picture",new_picture_path) %> |
-    <%= link_to 'Log out', sessions_path, method: :delete %>
-    Logged in as: <%= current_user.email %>
-  <% else %>
-    <%= link_to 'Log in', new_sessions_path %>
-  <% end %>
-</p>
-
-<% if flash[:alert] %>
-    <p>Oops - there were problems with your submission. Please fix the following:</p>
-    <ul>
-      <% if flash[:alert].class == Array %>
-        <% flash[:alert].each do |message| %>
-          <li><%= message %></li>
+  <div class="margin">
+    <p>
+      <nav>
+        <%= link_to 'Home', root_path %>
+        <%= link_to 'Sign Up', new_users_path %>
+        <% if current_user %>
+          <%= link_to("New Picture",new_picture_path) %>
+          <%= link_to 'Log out', sessions_path, method: :delete %> |
+          Logged in as: <%= current_user.email %>
+        <% else %>
+          <%= link_to 'Log in', new_sessions_path %>
         <% end %>
-      <% else  %>
-        <li><%= flash[:alert] %></li>
-      <% end  %>
-    </ul>
-  <% end %>
+      </nav>
 
-<%= yield %>
+    </p>
 
+    <% if flash[:alert] %>
+        <p>Oops - there were problems with your submission. Please fix the following:</p>
+        <ul>
+          <% if flash[:alert].class == Array %>
+            <% flash[:alert].each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          <% else  %>
+            <li><%= flash[:alert] %></li>
+          <% end  %>
+        </ul>
+      <% end %>
+    <%= yield %>
+</div>
 </body>
 </html>
